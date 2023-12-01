@@ -1,6 +1,6 @@
 import './App.css'
 import {Routes,Route} from "react-router-dom"
-import AI from './components/AI';
+import AI from './components/main';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';

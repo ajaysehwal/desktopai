@@ -1,6 +1,7 @@
 const CreateViteApp = require("../commands/createviteapp");
 const CreateReactApp = require("../commands/createreactapp");
-const ChromeOpener = require('../commands/openchrome');
+const ChromeOpener = require('../commands/openChrome');
+const SpotifyOpener = require('../commands/openSpotify');
 const { HelloHandler, OpenYouTubeHandler, DefaultHandler, HowAreYouHandler, TellJokeHandler, HistoricalFactHandler, FunFactHandler } = require("../Handlers");
 module.exports = async (message, res) => {
   let response, links;
@@ -12,6 +13,9 @@ module.exports = async (message, res) => {
       response = HelloHandler.handle();
       break;
     case "open youtube":
+    case "bro open youtube":
+    case "please open youtube":
+    case "bro please open youtube":
       links = OpenYouTubeHandler.generateLink();
       response = "Sure, youtube is opening please wait..";
       break;
@@ -141,6 +145,14 @@ module.exports = async (message, res) => {
       chromeOpener.openChrome();
       response = "chrome is opening ..."
       break;
+    case "open spotify":
+    case "please open spotify":
+    case "spotify open karo":
+    case "bro please open spotify":
+      const spotifyOpener = new SpotifyOpener();
+      spotifyOpener.openSpotify();
+    response = "spotify is opening ...";
+    break;
     default:
       response = DefaultHandler.handle();
       break;

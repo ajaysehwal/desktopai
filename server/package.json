@@ -15,11 +15,13 @@
     "express": "^4.18.2",
     "fs": "^0.0.1-security",
     "google-tts-api": "^2.0.2",
+    "mongoose": "^8.0.2",
     "ngrok": "^5.0.0-beta.2",
     "nodemon": "^3.0.1",
     "openai": "^4.20.1",
     "prompt": "^1.3.0",
     "rimraf": "^5.0.5",
-    "twilio": "^4.19.0"
+    "twilio": "^4.19.0",
+    "uuid": "^9.0.1"
   }
 }

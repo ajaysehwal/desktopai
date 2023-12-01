@@ -3,7 +3,7 @@ const app=express()
 const cors=require('cors')
 const bodyParser=require('body-parser')
 const ExpressApp=require('./apis');
-// const test=require('./commands/recyclebin');
+const db=require('./database/connection');
 async function StartServer(){
 require('dotenv').config();
 var whitelist = ['https://youtube.com/','http://localhost:5173']
@@ -27,6 +27,8 @@ app.get('/',(req,res,next)=>{
     console.log("Server is running on 8000")
 })
 ExpressApp(app,cors);
+db();
+
 }
 StartServer();
 

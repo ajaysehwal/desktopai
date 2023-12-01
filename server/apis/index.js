@@ -1,15 +1,8 @@
-const GETResponse=require('../services/AI-Services')
+const {ResponseController,StartConversationsController,DividerConversationHandler}=require("../controllers");
 const ExpressApp=(app,cors)=>{
- 
-  app.post('/query',cors(),async(req,res,next)=>{
-   const {question} =req.body;
-     try{
-      await GETResponse(question,res);
-     }catch(err){
-      next(err)
-     }
-    
-  })
+  app.post('/query',cors(),ResponseController);
+  app.post('/startnewtalk',cors(),StartConversationsController);
+  app.post('/normal_conversation',cors(),DividerConversationHandler);
  
 }
 
